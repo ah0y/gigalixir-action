@@ -1085,6 +1085,10 @@ async function run() {
     const gigalixirApp = core.getInput('GIGALIXIR_APP', { required: true });
     const migrations = core.getInput('MIGRATIONS', { required: true });
 
+    await core.group("Installing Open SSL", async () => {
+      await exec.exec('sudo pip install pyOpenSSL=0.13.1 --ignore-installed six')
+    });
+
     await core.group("Installing gigalixir", async () => {
       await exec.exec('sudo pip install gigalixir==1.1.11 --ignore-installed six')
     });
