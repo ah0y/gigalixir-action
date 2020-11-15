@@ -7,7 +7,7 @@ Note: This action has only been tested in one repo and has no unit tests.
 ## Usage
 
 ```yaml
-test: 
+test:
   # A job to run your tests, linters, etc
 
 deploy:
@@ -22,13 +22,13 @@ deploy:
         ref: master # Checkout out master instead of the latest commit
         fetch-depth: 0 # Checkout the whole branch
 
-    - uses: mhanberg/gigalixir-action@<current release>
+    - uses: ah0y/gigalixir-action@<current release>
       with:
         GIGALIXIR_USERNAME: ${{ secrets.GIGALIXIR_USERNAME }}
         GIGALIXIR_PASSWORD: ${{ secrets.GIGALIXIR_PASSWORD }}
         GIGALIXIR_APP: my-gigalixir-app # Feel free to also put this in your secrets
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        MIGRATIONS: false  # defaults to true
+        MIGRATIONS: false # defaults to true
 ```
 
 ## Migrations
@@ -43,7 +43,7 @@ If your migrations fail, the action will rollback the app to the last version.
 
 ## Contributing
 
-Remember to 
+Remember to
 
 - `npm install`
 - `npm run package`

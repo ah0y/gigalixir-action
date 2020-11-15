@@ -78,7 +78,7 @@ async function run() {
     const migrations = core.getInput('MIGRATIONS', { required: true });
 
     await core.group("Installing gigalixir", async () => {
-      await exec.exec('sudo pip install gigalixir --ignore-installed six')
+      await exec.exec('sudo pip install gigalixir==1.1.11 --ignore-installed six')
     });
 
     await core.group("Logging in to gigalixir", async () => {
